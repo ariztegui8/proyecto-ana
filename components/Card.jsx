@@ -29,7 +29,7 @@ const Card = () => {
     }, [])
 
     return (
-        <div className="">
+        <div className="grid grid-cols-3 gap-4">
             {cards.map(data => (
                 <div className="card card-compact w-96 bg-base-100 shadow-xl">
                     <figure><img src={data.fields.image.fields.file.url} alt="Shoes" /></figure>

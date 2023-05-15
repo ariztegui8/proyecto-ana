@@ -5,7 +5,7 @@ const Home = () => {
         <div className="drawer">
             <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
             <div className="drawer-content flex flex-col">
-dasdasdasadas
+
                 <div className="w-full navbar bg-base-300">
                     <div className="flex-none lg:hidden">
                         <label htmlFor="my-drawer-3" className="btn btn-square btn-ghost">
@@ -22,9 +22,7 @@ dasdasdasadas
                     </div>
                 </div>
 
-                <div>
-                Content
-                </div>
+
             </div>
             <div className="drawer-side">
                 <label htmlFor="my-drawer-3" className="drawer-overlay"></label>
