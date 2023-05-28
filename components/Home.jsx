@@ -1,4 +1,5 @@
 import React from 'react'
+import Card from '../components/Card'
 
 const Home = () => {
     return (
@@ -20,6 +21,10 @@ const Home = () => {
                             <li><a>Navbar Item 2</a></li>
                         </ul>
                     </div>
+                </div>
+
+                <div className='mb-4'>
+                    <Card />
                 </div>
 
 
