@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Formulario from '../components/formulario'
+import GenerateImage from '../components/GenerateImage';
 
 
 const index = () => {
@@ -9,17 +10,17 @@ const index = () => {
     apellido: '',
     email: '',
     telefono: '',
-})
+  })
   const [dataForm, setDataForm] = useState([]);
   const [edit, setEdit] = useState({});
-  
-  const btnDelete = id =>{
+
+  const btnDelete = id => {
     const handleDelete = dataForm.filter(data => data.id !== id)
     setDataForm(handleDelete);
   }
 
-  useEffect(()=>{
-    if(Object.keys(edit).length > 0) {
+  useEffect(() => {
+    if (Object.keys(edit).length > 0) {
       setForm({
         nombre: edit.nombre,
         apellido: edit.apellido,
@@ -44,22 +45,24 @@ const index = () => {
         />
       </div>
 
-     
-        {dataForm.map((data) => (
-           <div className="bg-red-200 rounded-xl shadow-lg max-w-xs m-auto text-center mb-2">
-            <p className="text-xl">{data.nombre}</p>
-            <p className="text-xl">{data.apellido}</p>
-            <p className="text-xl">{data.email}</p>
-            <p className="text-xl">{data.telefono}</p>
 
-            <div className='flex gap-2 justify-center'>
-              <button onClick={()=> setEdit(data)} className="btn btn-info">Editar</button>
-              <button onClick={()=> btnDelete(data.id)} className="btn btn-error">Eliminar</button>
-            </div>
+      {dataForm.map((data) => (
+        <div className="bg-red-200 rounded-xl shadow-lg max-w-xs m-auto text-center mb-2">
+          <p className="text-xl">{data.nombre}</p>
+          <p className="text-xl">{data.apellido}</p>
+          <p className="text-xl">{data.email}</p>
+          <p className="text-xl">{data.telefono}</p>
+
+          <div className='flex gap-2 justify-center'>
+            <button onClick={() => setEdit(data)} className="btn btn-info">Editar</button>
+            <button onClick={() => btnDelete(data.id)} className="btn btn-error">Eliminar</button>
           </div>
-        ))}
+        </div>
+      ))}
 
-      </div>
+      <GenerateImage />
+
+    </div>
   )
 }
 
